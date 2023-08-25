@@ -1,0 +1,11 @@
+[2023-08-25 15:32:46,326] werkzeug - WARNING -  * Debugger is active!
+[2023-08-25 15:32:46,332] werkzeug - INFO -  * Debugger PIN: 126-100-843
+[2023-08-25 15:32:49,899] root - INFO - 
+        Error occured in execution of :
+        [E:\FullStack_Data\MACHINE_LEARNING\PROJECTS\ML_Project6\exception.py] at
+        try block line number : [11]
+        and exception block line number : [13]
+        error message : [we are testing exception]
+        
+[2023-08-25 15:32:49,899] root - INFO - we are testing the logging
+[2023-08-25 15:32:49,899] werkzeug - INFO - 127.0.0.1 - - [25/Aug/2023 15:32:49] "GET / HTTP/1.1" 200 -

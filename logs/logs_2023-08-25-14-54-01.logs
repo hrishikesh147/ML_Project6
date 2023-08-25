@@ -1,0 +1,8 @@
+[2023-08-25 14:54:01,828] werkzeug - WARNING -  * Debugger is active!
+[2023-08-25 14:54:01,830] werkzeug - INFO -  * Debugger PIN: 126-100-843
+[2023-08-25 14:54:24,234] root - INFO - we are testing the logging
+[2023-08-25 14:54:24,234] werkzeug - INFO - 127.0.0.1 - - [25/Aug/2023 14:54:24] "GET / HTTP/1.1" 200 -
+[2023-08-25 14:54:25,733] root - INFO - we are testing the logging
+[2023-08-25 14:54:25,733] werkzeug - INFO - 127.0.0.1 - - [25/Aug/2023 14:54:25] "GET / HTTP/1.1" 200 -
+[2023-08-25 14:54:26,378] root - INFO - we are testing the logging
+[2023-08-25 14:54:26,378] werkzeug - INFO - 127.0.0.1 - - [25/Aug/2023 14:54:26] "GET / HTTP/1.1" 200 -
