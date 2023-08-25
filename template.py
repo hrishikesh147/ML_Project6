@@ -23,7 +23,7 @@ list_of_files=[
     "schema.yaml",
     "app.py",
     "main.py",
-    "exception.py"
+    "exception.py",
     "setup.py"
 ]
 
