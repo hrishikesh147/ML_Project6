@@ -19,3 +19,16 @@ def get_current_time_stamp():
     return f"{datetime.now().strftime('%Y-%m-%d %H-%M-%S')}"
 
 CURRENT_TIME_STAMP=get_current_time_stamp()
+
+# data transformation variables------------(folder structure shown below)-----------------------
+#data_transformation->processor (folder)            ,    transformation (folder)
+#                    1) processor.pkl               ,  1) train.csv      2)  test.csv 
+DATA_TRANSFORMATION_ARTIFACT ="data_transformation"
+
+DATA_PREPROCCED_DIR ="procceor"
+DATA_TRANSFORMTION_PROCESSING_OBJ="processor.pkl"
+
+DATA_TRANSFORM_DIR ="transformation"
+TRANSFORM_TRAIN_DIR_KEY ="train.csv"
+TRANSFORM_TEST_DIR_KEY ="test.csv"
+
