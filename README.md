@@ -6,3 +6,6 @@ activate env-------conda activate env/
 running requirements.txt------pip install -r requirements.txt
 
 install setup file---------python setup.py install
+
+
+pip install .

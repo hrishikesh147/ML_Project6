@@ -67,7 +67,7 @@ class DataTransformation:
         self.data_transformation_config=DataTransformationConfig()
         logging.info("starting data transformation")
 
-    def get_data_transformation_obj(self,df):
+    def get_data_transformation_obj(self):
         try:
             Road_traffic_density = ['Low', 'Medium', 'High', 'Jam']
             Weather_conditions = ['Sunny', 'Cloudy', 'Fog', 'Sandstorms', 'Windy', 'Stormy']
@@ -101,11 +101,11 @@ class DataTransformation:
             logging.info("ordinal_pipeline step completed SUCCESFULLY")
 
             logging.info("ColumnTransformer step began.....")
-            preprocssor=ColumnTransformer(
+            preprocssor=ColumnTransformer([
                 ('numerical_pipeline',numerical_pipeline,numerical_column),
                 ('categorical_pipeline',categorical_pipeline,categorical_columns),
                 ('ordinal_column',ordinal_pipeline,ordinal_encoder)
-            )
+            ])
 
             logging.info("Column transformer step completed")
             return preprocssor
@@ -115,25 +115,25 @@ class DataTransformation:
         
     def get_feature_engineering_object(self):
         try:
-            feature_engineering=Pipeline(steps=['fe',Feature_Engineering()])
+            feature_engineering = Pipeline(steps = [("fe",Feature_Engineering())])
+
             return feature_engineering
-        
+
         except Exception as e:
-            raise CustomException(e,sys)
+            raise CustomException( e,sys)
         
     
     def initiate_data_transformation(self,train_path,test_path):
         logging.info("initiating data transformation")
         train_df=pd.read_csv(train_path)
         test_df=pd.read_csv(test_path)
-        logging.info("train_df/test_df splitting Done")
+        logging.info("train_df/test_df reading Done")
 
-        fe_obj=self.get_feature_engineering_object()
+        fe_obj = self.get_feature_engineering_object()
         logging.info("get_feature_engineering_object called")
         
-
-        train_df=fe_obj.fit_transform(train_df)
-        test_df=fe_obj.transform(test_df)
+        train_df = fe_obj.fit_transform(train_df)
+        test_df = fe_obj.transform(test_df)
         logging.info("fit_transform/transform of train_df/test_df Done")
 
         train_df.to_csv("train_data.csv")

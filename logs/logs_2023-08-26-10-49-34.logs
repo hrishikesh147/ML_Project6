@@ -1,0 +1,10 @@
+[2023-08-26 10:49:35,079] root - INFO - starting initiate data_ingestion
+[2023-08-26 10:49:35,985] root - INFO - raw data saved in raw_data_path
+[2023-08-26 10:49:36,018] root - INFO - train, test split of data done
+[2023-08-26 10:49:36,625] root - INFO - train data saved in train_data_path
+[2023-08-26 10:49:36,789] root - INFO - test file saved in test_data_path
+[2023-08-26 10:49:36,789] root - INFO -  returning train and test data path
+[2023-08-26 10:49:36,796] root - INFO - starting data transformation
+[2023-08-26 10:49:36,798] root - INFO - initiating data transformation
+[2023-08-26 10:49:37,076] root - INFO - train_df/test_df splitting Done
+[2023-08-26 10:49:37,080] root - INFO - feature Engineering started...
