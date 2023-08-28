@@ -39,7 +39,7 @@ class Feature_Engineering(BaseEstimator,TransformerMixin):
                      'Delivery_location_latitude','Delivery_location_longitude',
                      'Order_Date','Time_Orderd','Time_Order_picked'],axis=1,inplace=True)
             
-            logging.info("Non important columns dropped")
+            logging.info("Non important columns dropped")  
 
             return df 
 
@@ -105,9 +105,10 @@ class DataTransformation:
                 ('numerical_pipeline',numerical_pipeline,numerical_column),
                 ('categorical_pipeline',categorical_pipeline,categorical_columns),
                 ('ordinal_column',ordinal_pipeline,ordinal_encoder)
-            ])
+            ],remainder='passthrough')
 
             logging.info("Column transformer step completed")
+
             return preprocssor
 
         except Exception as e:
@@ -132,7 +133,9 @@ class DataTransformation:
         fe_obj = self.get_feature_engineering_object()
         logging.info("get_feature_engineering_object called")
         
-        train_df = fe_obj.fit_transform(train_df)
+        train_df = fe_obj.fit(train_df)
+        train_df = fe_obj.transform(train_df)
+
         test_df = fe_obj.transform(test_df)
         logging.info("fit_transform/transform of train_df/test_df Done")
 
